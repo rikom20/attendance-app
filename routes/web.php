@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\Admin\AdminAttendanceController;
-use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\StampCorrectionRequestController;
-use App\Http\Controllers\Admin\StampCorrectionRequestController as AdminStampCorrectionRequestController;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 /*
@@ -48,9 +46,6 @@ Route::post('/admin/login', [AuthenticatedSessionController::class, 'store'])
 |--------------------------------------------------------------------------
 */
 Route::middleware(['auth', 'can:admin'])->group(function () {
-    // ログアウト
-    Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
-
     // 勤怠一覧画面（管理者）
     Route::get('/admin/attendance/list', [AdminAttendanceController::class, 'dailyList'])->name('admin.attendance.list');
 

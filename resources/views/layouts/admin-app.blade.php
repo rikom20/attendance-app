@@ -18,7 +18,7 @@
                 <img class="header__logo--img" src="{{ asset('images/logo.svg') }}" alt="logo">
             </a>
             @if(Auth::check() && Auth::user()->admin_status)
-            <form action="/admin/logout" method="post">
+            <form action="{{ route('logout') }}" method="post">
                 @csrf
                 <nav class="inner__group">
                     <a class="inner__group--item" href="/admin/attendance/list">勤怠一覧</a>
