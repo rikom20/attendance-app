@@ -80,7 +80,6 @@ erDiagram
 ```
 
 ## URL
-* 開発環境（一般ユーザー）：http://localhost/
 * 会員登録画面：http://localhost/register
 * ログイン画面：http://localhost/login
 * 管理者ログイン画面：http://localhost/admin/login
