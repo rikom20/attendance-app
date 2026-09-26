@@ -16,6 +16,13 @@
 * ./vendor/bin/sail artisan migrate
 * ./vendor/bin/sail artisan db:seed
 
+### ダミーデータ（ログイン情報）
+| 区分 | メールアドレス | パスワード | 備考 |
+|---|---|---|---|
+| 一般ユーザー1 | user1@example.com | password | メール認証済み。過去5ヶ月分＋当月分の勤怠ダミーデータあり |
+| 一般ユーザー2 | user2@example.com | password | メール認証済み |
+| 管理者ユーザー | user3@example.com | password | admin_status: true |
+
 ## 使用技術（実行環境）
 * PHP 8.5.9
 * Laravel 10.50.3
