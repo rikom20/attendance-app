@@ -8,20 +8,17 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('rest_times', function (Blueprint $table) {
-            $table->foreignId('attendance_correct_request_id')
-                ->nullable()
-                ->after('attendance_id')
-                ->constrained('attendance_correct_requests')
-                ->cascadeOnDelete();
+        Schema::create('rest_times', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('attendance_id')->constrained('attendances')->cascadeOnDelete();
+            $table->dateTime('start_time'); // 休憩開始日時
+            $table->dateTime('end_time')->nullable(); // 休憩終了日時（休憩中時はnull）
+            $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::table('rest_times', function (Blueprint $table) {
-            $table->dropForeign(['attendance_correct_request_id']);
-            $table->dropColumn('attendance_correct_request_id');
-        });
+        Schema::dropIfExists('rest_times');
     }
 };
