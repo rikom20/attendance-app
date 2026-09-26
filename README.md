@@ -7,7 +7,8 @@
 * git clone git@github.com:rikom20/attendance-app.git
 * cp .env.example .env
 * composer install
-* ./vendor/bin/sail artisan key:generate （※ alias 設定済みの場合は `sail up -d` でも可、以下同様）
+* ./vendor/bin/sail up -d　(※ alias 設定済みの場合は sail up -d でも可,以下同)
+* ./vendor/bin/sail artisan key:generate
 * ./vendor/bin/sail npm install
 * ./vendor/bin/sail npm run dev
 
